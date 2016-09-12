@@ -36,7 +36,7 @@ module Riiif
         render json: info, content_type: 'application/ld+json'
       elsif authorization_service.has_degraded?(image)
         redirect_to authorization_service.degraded_image_uri(image)
-        render json: info, content_type: 'application/ld+json'
+        
       else
         render json: info, status: :unauthorized
       end
